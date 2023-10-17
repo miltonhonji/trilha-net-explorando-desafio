@@ -17,7 +17,11 @@ namespace DesafioProjetoHospedagem.Models
         {
             // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
             // *IMPLEMENTE AQUI*
-            if (true)
+            Console.WriteLine("Digite a quantidade de hóspedes:");
+            int quantidadeDeHospedes = int.Parse(Console.ReadLine());
+            
+            //if (true)
+            if (Suite.Capacidade >= quantidadeDeHospedes)
             {
                 Hospedes = hospedes;
             }
