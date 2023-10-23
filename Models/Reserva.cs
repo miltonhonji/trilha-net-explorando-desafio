@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Net.Security;
 
 namespace DesafioProjetoHospedagem.Models
@@ -46,13 +47,18 @@ namespace DesafioProjetoHospedagem.Models
         {
             // TODO: Retorna o valor da diária
             // Cálculo: DiasReservados X Suite.ValorDiaria
-            decimal valor = DiasReservados * Suite.ValorDiaria;
+            decimal valor = 0;
             // Regra: Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10% 
-            int desconto = 10;
 
             if (DiasReservados >= 10)
             {
-                valor = DiasReservados * (desconto / 100);
+                decimal valorComDesconto = DiasReservados * (Suite.ValorDiaria * (10/100));
+                valor = (DiasReservados * Suite.ValorDiaria) - valorComDesconto;
+                //valor = 0;
+            }
+            else
+            {
+                valor = DiasReservados * Suite.ValorDiaria;
             }
 
             return valor;
